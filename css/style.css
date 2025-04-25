@@ -218,6 +218,7 @@ header nav ul li a:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
     /* Затемнение фона */
 }
 
