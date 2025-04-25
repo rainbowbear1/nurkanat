@@ -218,7 +218,6 @@ header nav ul li a:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
-    position: relative;
     /* Затемнение фона */
 }
 
@@ -230,6 +229,7 @@ header nav ul li a:hover {
     width: 60%;
     max-width: 600px;
     border-radius: 10px;
+    position: relative;
 }
 
 .close-btn {
