@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экология и Мониторинг Алматинской области</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/scrollreveal"></script> <!-- Для анимаций -->
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Цели проекта</a></li>
+                <li><a href="#">Мониторинг</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Экология и Мониторинг Алматинской области</h1>
+            <p>Следим за экологическим состоянием региона, проводим мониторинг воды, воздуха и земли.</p>
+            <a href="#volunteer" class="btn-main">Записаться на волонтерство</a>
+        </div>
+    </section>
+
+
+    <section id="monitoring">
+        <h2>Мониторинг</h2>
+        <div class="monitoring-content">
+            <div class="monitoring-item" data-monitor="water">Вода</div>
+            <div class="monitoring-item" data-monitor="air">Воздух</div>
+            <div class="monitoring-item" data-monitor="soil">Земля</div>
+        </div>
+    </section>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <section class="news">
+        <h2 class="section-title">Новости</h2>
+        <div class="news-list">
+            <div class="news-item">
+                <h3>Важная инициатива по улучшению качества воздуха в Алматы</h3>
+                <p>Новое исследование показывает значительное улучшение качества воздуха благодаря новому проекту по
+                    озеленению города...</p>
+            </div>
+            <div class="news-item">
+                <h3>Открытие нового центра мониторинга в Алматинской области</h3>
+                <p>В рамках экологической программы открылся новый центр мониторинга, который будет отслеживать
+                    состояние экосистем...</p>
+            </div>
+        </div>
+    </section>
+    <section class="volunteer" id="volunteer">
+        <h2 class="section-title">Записаться на волонтерство</h2>
+        <form class="volunteer-form">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Ваш email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Почему вы хотите стать волонтером?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit" class="btn-main">Отправить заявку</button>
+        </form>
+    </section>
+    <section class="about-us">
+        <h2 class="section-title">О нас</h2>
+        <p>Мы — команда профессионалов, посвятивших свою работу мониторингу экологии и улучшению состояния природы в
+            Алматинской области.</p>
+        <h3>Мнение о нас</h3>
+        <p>"Балалар, жобаларың өте ұнады. Экология — біздің ең үлкен қазынамыз. Жасаған жұмыстарың болашақта үлкен
+            жетістіктерге жетелейді деп сенемін. Әрбір қадамыңыз терең ойластырылып, нық жасалғаны көрініп тұр. Бұл
+            жобаны жай ғана ғылыми жұмыс деп емес, болашақты өзгертетін нақты құрал ретінде қабылдағандарың жөн. Жалпы,
+            еңбектерің өте өнімді болады деп ойлаймын. Сәттілік!" — Искаков Аюп Рашитович </p>
+
+        <h3>Основатели проекта</h3>
+        <ul>
+            <li>Иван Иванов — Эколог, основатель проекта</li>
+            <li>Мария Петрова — Специалист по мониторингу воды</li>
+            <li>Сергей Ковалев — Инженер-эколог</li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Контактная информация</h3>
+            <p>Email: info@ecology.kz</p>
+            <p>Телефон: +7 777 409 44 35</p>
+            <p>Адрес: Алматы, улица Экологов 1</p>
+        </div>
+        <p>&copy; 2025 Экология и Мониторинг. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Получаем элементы
+        const modal = document.getElementById('modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const items = document.querySelectorAll('.monitoring-item');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+
+        // Данные для секций
+        const monitoringData = {
+            water: {
+                title: 'Загрязнение воды',
+                description: 'Вода в Алматинской области подвержена загрязнению химикатами и отходами промышленных предприятий, что приводит к ухудшению качества питьевой воды и угрозам для экосистемы.'
+            },
+            air: {
+                title: 'Загрязнение воздуха',
+                description: 'Воздух в некоторых районах Алматинской области загрязнен выбросами углекислого газа, что способствует ухудшению здоровья людей и изменениям климата.'
+            },
+            soil: {
+                title: 'Загрязнение почвы',
+                description: 'Почва в Алматинской области загрязнена отходами сельского хозяйства и промышленности, что приводит к деградации земель и уменьшению сельскохозяйственного потенциала региона.'
+            }
+        };
+
+        // Функция для открытия модального окна
+        let timeoutId;
+
+        items.forEach(item => {
+            item.addEventListener('click', function () {
+                timeoutId = setTimeout(() => {
+                    const monitorType = this.getAttribute('data-monitor');
+                    modalTitle.textContent = monitoringData[monitorType].title;
+                    modalDescription.textContent = monitoringData[monitorType].description;
+                    modal.style.display = 'block'; // Показываем модальное окно
+                }, ); 
+            });
+
+            item.addEventListener('mouseleave', function () {
+                clearTimeout(timeoutId); // Снимаем таймер, если пользователь уходит курсором
+            });
+        });
+
+        // Закрытие модального окна при клике на крестик
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Закрытие модального окна при клике вне его (на фоне)
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+
+
+
+        // Скрипт для анимации отправки заявки
+        document.querySelector('.volunteer-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Ваша заявка на волонтерство отправлена!');
+        });
+
+        // Анимации для скроллинга
+        ScrollReveal().reveal('.hero-content', { delay: 300, duration: 1500 });
+        ScrollReveal().reveal('.volunteer-form', { delay: 300, duration: 1500 });
+        ScrollReveal().reveal('.monitoring .card', { delay: 300, duration: 1500, interval: 200 });
+        ScrollReveal().reveal('.news-item', { delay: 300, duration: 1500, interval: 200 });
+
+    </script>
+</body>
+
+</html>

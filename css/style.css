@@ -1,0 +1,404 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2019%2F09%2F132794-trees-hills-mountains-fall-forest-sky.jpg&f=1&nofb=1&ipt=8304c12a4ee50c7a519fd6d30d3ff6d7f8b8ce67d158fae6e6c37fc2f2ced64b);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4CAF50;
+    /* Цвет, близкий к экологичному зеленому */
+    text-align: center;
+    /* Выравнивание по центру */
+    margin: 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Стиль навигации */
+header {
+    background-color: #006400;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    background-color: #004d00;
+    border-radius: 5px;
+}
+
+/* Герой-секция */
+.hero {
+    background: url('https://via.placeholder.com/1600x600') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.hero .btn-main {
+    padding: 15px 30px;
+    background-color: #006400;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero .btn-main:hover {
+    background-color: #004d00;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Формы */
+.volunteer-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.5s ease-out;
+    margin-bottom: 50px;
+}
+
+.volunteer-form label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.volunteer-form input,
+.volunteer-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.volunteer-form input:focus,
+.volunteer-form textarea:focus {
+    border-color: #006400;
+}
+
+.volunteer-form button {
+    background-color: #006400;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.volunteer-form button:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+/* Мониторинг */
+.monitoring {
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.monitoring .monitoring-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.monitoring .card {
+    background-color: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.monitoring .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.monitoring .card h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.monitoring .card p {
+    font-size: 16px;
+}
+
+/* Стиль для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Затемнение фона */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.monitoring-item {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.monitoring-item:hover {
+    background-color: #81C784;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Стиль для элементов мониторинга */
+.monitoring-item {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.monitoring-item:hover {
+    background-color: #81C784; /* Изменяем цвет при наведении */
+}
+
+/* Стиль для задержки появления */
+.monitoring-item.active {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Стиль для элементов мониторинга */
+.monitoring-item {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.monitoring-item:hover {
+    background-color: #81C784; /* Изменяем цвет при наведении */
+}
+
+/* Стиль для задержки появления */
+.monitoring-item.active {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+
+/* Новости */
+.news {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.news-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.news-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.news-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.news-item p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* О нас */
+.about-us {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.about-us h3 {
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    position: relative;
+}
+
+footer .contact-info {
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
