@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\index.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open project-goals.html",
+            "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\project-goals.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open monitoring.html",
+            "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\monitoring.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open news.html",
+            "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\news.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open about.html",
+            "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\about.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open contacts.html",
+            "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\contacts.html"
+        }
+    ]
+}

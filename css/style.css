@@ -368,6 +368,37 @@ header nav ul li a:hover {
     line-height: 1.5;
 }
 
+/* Style for news content */
+.news-content {
+    max-height: 100px; /* Limit the visible height */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    position: relative;
+    transition: max-height 0.3s ease;
+}
+
+/* Expanded content */
+.news-content.expanded {
+    max-height: none; /* Remove height limit */
+}
+
+/* Style for the "Read More" button */
+.read-more-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #388E3C;
+}
+
 /* О нас */
 .about-us {
     padding: 80px 20px;
@@ -408,4 +439,5 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
+    
 }

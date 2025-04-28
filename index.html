@@ -14,12 +14,12 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Цели проекта</a></li>
-                <li><a href="#">Мониторинг</a></li>
-                <li><a href="#">Новости</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="project-goals.html">Цели проекта</a></li>
+                <li><a href="roadmap.html">Роадмап</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
     </header>
@@ -59,21 +59,7 @@
         </div>
     </div>
 
-    <section class="news">
-        <h2 class="section-title">Новости</h2>
-        <div class="news-list">
-            <div class="news-item">
-                <h3>Важная инициатива по улучшению качества воздуха в Алматы</h3>
-                <p>Новое исследование показывает значительное улучшение качества воздуха благодаря новому проекту по
-                    озеленению города...</p>
-            </div>
-            <div class="news-item">
-                <h3>Открытие нового центра мониторинга в Алматинской области</h3>
-                <p>В рамках экологической программы открылся новый центр мониторинга, который будет отслеживать
-                    состояние экосистем...</p>
-            </div>
-        </div>
-    </section>
+    
     <section class="volunteer" id="volunteer">
         <h2 class="section-title">Записаться на волонтерство</h2>
         <form class="volunteer-form">
@@ -86,28 +72,11 @@
             <button type="submit" class="btn-main">Отправить заявку</button>
         </form>
     </section>
-    <section class="about-us">
-        <h2 class="section-title">О нас</h2>
-        <p>Мы — команда профессионалов, посвятивших свою работу мониторингу экологии и улучшению состояния природы в
-            Алматинской области.</p>
-        <h3>Мнение о нас</h3>
-        <p>"Балалар, жобаларың өте ұнады. Экология — біздің ең үлкен қазынамыз. Жасаған жұмыстарың болашақта үлкен
-            жетістіктерге жетелейді деп сенемін. Әрбір қадамыңыз терең ойластырылып, нық жасалғаны көрініп тұр. Бұл
-            жобаны жай ғана ғылыми жұмыс деп емес, болашақты өзгертетін нақты құрал ретінде қабылдағандарың жөн. Жалпы,
-            еңбектерің өте өнімді болады деп ойлаймын. Сәттілік!" — Искаков Аюп Рашитович </p>
-
-        <h3>Основатели проекта</h3>
-        <ul>
-            <li>Иван Иванов — Эколог, основатель проекта</li>
-            <li>Мария Петрова — Специалист по мониторингу воды</li>
-            <li>Сергей Ковалев — Инженер-эколог</li>
-        </ul>
-    </section>
 
     <footer>
         <div class="contact-info">
             <h3>Контактная информация</h3>
-            <p>Email: info@ecology.kz</p>
+            <p>Email: ecology@organization.kz</p>
             <p>Телефон: +7 777 409 44 35</p>
             <p>Адрес: Алматы, улица Экологов 1</p>
         </div>
@@ -147,6 +116,7 @@
                     const monitorType = this.getAttribute('data-monitor');
                     modalTitle.textContent = monitoringData[monitorType].title;
                     modalDescription.textContent = monitoringData[monitorType].description;
+                    document.getElementById('modal-image').src = monitoringData[monitorType].image; 
                     modal.style.display = 'block'; // Показываем модальное окно
                 }, ); 
             });
