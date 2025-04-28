@@ -1,7 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
+
         {
             "type": "chrome",
             "request": "launch",
@@ -31,12 +31,6 @@
             "request": "launch",
             "name": "Open about.html",
             "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\about.html"
-        },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Open contacts.html",
-            "file": "c:\\Users\\Жангир\\Desktop\\coding\\nurkanat\\contacts.html"
-        }
+        }, 
     ]
 }

@@ -403,6 +403,31 @@ header {
     margin: 0 auto; /* Center the text block */
 }
 
+.project-goals ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px; /* Limit the width of the list */
+    text-align: left; /* Align the list items to the left */
+}
+
+.project-goals ul li {
+    font-size: 1rem; /* Standard font size */
+    line-height: 1.6; /* Improve readability */
+    color: #555; /* Slightly lighter text color */
+    margin-bottom: 10px; /* Add spacing between list items */
+    position: relative; /* For custom bullet points */
+    padding-left: 20px; /* Add space for the custom bullet */
+}
+
+.project-goals ul li::before {
+    content: "✔"; /* Custom bullet point */
+    color: #4CAF50; /* Match the theme color */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 /* Footer */
 footer {
     background-color: #333;
