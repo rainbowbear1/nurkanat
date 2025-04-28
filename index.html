@@ -12,14 +12,15 @@
 <body>
 
     <header>
-        <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="project-goals.html">Цели проекта</a></li>
                 <li><a href="roadmap.html">Роадмап</a></li>
                 <li><a href="news.html">Новости</a></li>
                 <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -33,33 +34,93 @@
     </section>
 
 
-    <section id="monitoring">
-        <h2>Мониторинг</h2>
-        <div class="monitoring-content">
-            <div class="monitoring-item" data-monitor="water">Вода</div>
-            <div class="monitoring-item" data-monitor="air">Воздух</div>
-            <div class="monitoring-item" data-monitor="soil">Земля</div>
+    <section class="monitoring" id="monitoring">
+        <!-- Секция: Мониторинг почвы -->
+        <div class="card">
+          <h2>Мониторинг почвы</h2>
+          <p>Алматинская область имеет разнообразные типы почв, которые нуждаются в постоянном мониторинге для сохранения их плодородия и защиты от деградации. Почвенные анализы включают исследования на содержание органических веществ, кислотность, содержание минералов и загрязняющих веществ.</p>
         </div>
-    </section>
-
-    <!-- Модальное окно -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3 id="modal-title"></h3>
-            <p id="modal-description"></p>
-        </div>
-    </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3 id="modal-title"></h3>
-            <p id="modal-description"></p>
-        </div>
-    </div>
-
     
+        <div class="card">
+          <h3>Основные параметры мониторинга почвы</h3>
+          <ul>
+            <li>Кислотность (pH)</li>
+            <li>Содержание органических веществ</li>
+            <li>Минеральное содержание (азот, фосфор, калий)</li>
+            <li>Загрязнение тяжёлыми металлами</li>
+          </ul>
+        </div>
+    
+        <div class="card">
+          <h3>Карта мониторинга почвы</h3>
+          <div id="soilMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
+        </div>
+    
+        <!-- Секция: Мониторинг воздуха -->
+        <div class="card">
+          <h2>Мониторинг воздуха</h2>
+          <p>Контроль качества воздуха важен для здоровья людей и сохранения экосистемы региона. Основные параметры, такие как концентрация углекислого газа, оксидов азота, серы и других загрязняющих веществ, подлежат постоянному наблюдению.</p>
+        </div>
+    
+        <div class="card">
+          <h3>Основные параметры мониторинга воздуха</h3>
+          <ul>
+            <li>Уровень загрязнения CO2</li>
+            <li>Оксиды азота (NOx)</li>
+            <li>Концентрация мелкодисперсных частиц (PM2.5, PM10)</li>
+            <li>Содержание серы и углеводородов</li>
+          </ul>
+        </div>
+    
+        <div class="card">
+          <h3>Карта мониторинга воздуха</h3>
+          <div id="airMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
+        </div>
+    
+        <!-- Секция: Мониторинг воды -->
+        <div class="card">
+          <h2>Мониторинг воды</h2>
+          <p>Качество воды в Алматинской области включает как поверхностные, так и подземные водоисточники. Контроль за водой помогает выявить загрязнение тяжёлыми металлами, пестицидами и другими токсинами.</p>
+        </div>
+    
+        <div class="card">
+          <h3>Основные параметры мониторинга воды</h3>
+          <ul>
+            <li>Физико-химические параметры (pH, температура, мутность)</li>
+            <li>Токсичные вещества (тяжёлые металлы, нитраты, пестициды)</li>
+            <li>Биологические показатели (бактерии и вирусы)</li>
+          </ul>
+        </div>
+    
+        <div class="card">
+          <h3>Карта мониторинга воды</h3>
+          <div id="waterMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
+        </div>
+    
+        <!-- Секция: Биологический мониторинг -->
+        <div class="card">
+          <h2>Биологический мониторинг</h2>
+          <p>Биологический мониторинг помогает выявить изменения в экосистемах, а также определить состояние флоры и фауны. Это важно для сохранения биоразнообразия и предотвращения возможных экологических катастроф.</p>
+        </div>
+    
+        <div class="card">
+          <h3>Основные параметры биологического мониторинга</h3>
+          <ul>
+            <li>Изучение популяций животных и растений</li>
+            <li>Оценка состояния экосистем</li>
+            <li>Мониторинг микробиологического состава водоёмов</li>
+          </ul>
+        </div>
+    
+        <div class="card">
+          <h3>Карта биологического мониторинга</h3>
+          <div id="bioMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
+        </div>
+      </section>
+
+
+
+
     <section class="volunteer" id="volunteer">
         <h2 class="section-title">Записаться на волонтерство</h2>
         <form class="volunteer-form">
@@ -77,83 +138,18 @@
         <div class="contact-info">
             <h3>Контактная информация</h3>
             <p>Email: ecology@organization.kz</p>
+            <p>Telegram: @AlmaEco_bot</p>
             <p>Телефон: +7 777 409 44 35</p>
             <p>Адрес: Алматы, улица Экологов 1</p>
         </div>
         <p>&copy; 2025 Экология и Мониторинг. Все права защищены.</p>
     </footer>
 
-    <script>
-        // Получаем элементы
-        const modal = document.getElementById('modal');
-        const closeBtn = document.querySelector('.close-btn');
-        const items = document.querySelectorAll('.monitoring-item');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.getElementById('modal-description');
 
-        // Данные для секций
-        const monitoringData = {
-            water: {
-                title: 'Загрязнение воды',
-                description: 'Вода в Алматинской области подвержена загрязнению химикатами и отходами промышленных предприятий, что приводит к ухудшению качества питьевой воды и угрозам для экосистемы.'
-            },
-            air: {
-                title: 'Загрязнение воздуха',
-                description: 'Воздух в некоторых районах Алматинской области загрязнен выбросами углекислого газа, что способствует ухудшению здоровья людей и изменениям климата.'
-            },
-            soil: {
-                title: 'Загрязнение почвы',
-                description: 'Почва в Алматинской области загрязнена отходами сельского хозяйства и промышленности, что приводит к деградации земель и уменьшению сельскохозяйственного потенциала региона.'
-            }
-        };
+    
 
-        // Функция для открытия модального окна
-        let timeoutId;
-
-        items.forEach(item => {
-            item.addEventListener('click', function () {
-                timeoutId = setTimeout(() => {
-                    const monitorType = this.getAttribute('data-monitor');
-                    modalTitle.textContent = monitoringData[monitorType].title;
-                    modalDescription.textContent = monitoringData[monitorType].description;
-                    document.getElementById('modal-image').src = monitoringData[monitorType].image; 
-                    modal.style.display = 'block'; // Показываем модальное окно
-                }, ); 
-            });
-
-            item.addEventListener('mouseleave', function () {
-                clearTimeout(timeoutId); // Снимаем таймер, если пользователь уходит курсором
-            });
-        });
-
-        // Закрытие модального окна при клике на крестик
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        // Закрытие модального окна при клике вне его (на фоне)
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-
-
-
-        // Скрипт для анимации отправки заявки
-        document.querySelector('.volunteer-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            alert('Ваша заявка на волонтерство отправлена!');
-        });
-
-        // Анимации для скроллинга
-        ScrollReveal().reveal('.hero-content', { delay: 300, duration: 1500 });
-        ScrollReveal().reveal('.volunteer-form', { delay: 300, duration: 1500 });
-        ScrollReveal().reveal('.monitoring .card', { delay: 300, duration: 1500, interval: 200 });
-        ScrollReveal().reveal('.news-item', { delay: 300, duration: 1500, interval: 200 });
-
-    </script>
+    
+    <script src="js/script.js"></script>
 </body>
 
 </html>

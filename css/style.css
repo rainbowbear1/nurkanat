@@ -8,7 +8,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
     background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2019%2F09%2F132794-trees-hills-mountains-fall-forest-sky.jpg&f=1&nofb=1&ipt=8304c12a4ee50c7a519fd6d30d3ff6d7f8b8ce67d158fae6e6c37fc2f2ced64b);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -40,39 +39,79 @@ h2 {
     z-index: 1;
 }
 
-/* Стиль навигации */
+/* General styles for the header */
 header {
+    display: flex;
+    justify-content: space-between; /* Space between the hamburger and the nav menu */
+    align-items: center; /* Vertically align items */
+    padding: 10px 20px;
     background-color: #006400;
     color: white;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    position: relative; /* Ensure proper positioning */
+    z-index: 10; /* Keep the header above other elements */
 }
 
-header nav ul {
-    list-style: none;
+/* Hamburger menu button */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+/* Navigation menu */
+.nav-menu {
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-header nav ul li {
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
     margin: 0;
+    padding: 0;
 }
 
-header nav ul li a {
+.nav-menu ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px;
-    transition: background-color 0.3s ease-in-out;
 }
 
-header nav ul li a:hover {
-    background-color: #004d00;
-    border-radius: 5px;
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the hamburger menu button */
+    }
+
+    .nav-menu {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: #006400;
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu ul li a {
+        font-size: 16px;
+        padding: 10px 0;
+    }
 }
 
 /* Герой-секция */
@@ -171,9 +210,8 @@ header nav ul li a:hover {
 
 /* Мониторинг */
 .monitoring {
-    padding: 80px 20px;
-    background-color: rgba(255, 255, 255, 0.3);
-    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
 }
 
 .monitoring .monitoring-cards {
@@ -185,10 +223,10 @@ header nav ul li a:hover {
 
 .monitoring .card {
     background-color: white;
-    padding: 25px;
-    width: 300px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
@@ -197,90 +235,47 @@ header nav ul li a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.monitoring .card h2, 
 .monitoring .card h3 {
-    margin-bottom: 20px;
-    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 10px;
 }
 
 .monitoring .card p {
     font-size: 16px;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Стиль для модального окна */
-.modal {
-    display: none;
-    /* Скрыто по умолчанию */
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Затемнение фона */
+.monitoring .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    max-width: 600px;
-    border-radius: 10px;
-    position: relative;
+.monitoring .card ul li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #555;
 }
 
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+/* Leaflet Map Container */
+.leaflet-container {
+    height: 300px; /* Set a fixed height for the map */
+    border-radius: 10px; /* Add rounded corners */
+    margin-top: 10px; /* Add spacing above the map */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.monitoring-item {
-    font-size: 1.2rem;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.monitoring-item:hover {
-    background-color: #81C784;
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.5);
-    }
-
-    to {
-        transform: scale(1);
-    }
+/* Placeholder for "Coming Soon" */
+.coming-soon {
+    font-size: 20px;
+    color: rgba(128, 128, 128, 0.6); /* Faint grey color */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Take full height of the container */
+    margin: 0;
 }
 
 /* Стиль для элементов мониторинга */
@@ -305,31 +300,6 @@ header nav ul li a:hover {
 .monitoring-item.active {
     animation: fadeIn 0.5s ease-out;
 }
-
-/* Стиль для элементов мониторинга */
-.monitoring-item {
-    font-size: 1.2rem;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.monitoring-item:hover {
-    background-color: #81C784;
-    /* Изменяем цвет при наведении */
-}
-
-/* Стиль для задержки появления */
-.monitoring-item.active {
-    animation: fadeIn 0.5s ease-out;
-}
-
-
 
 /* Новости */
 .news {
@@ -410,6 +380,29 @@ header nav ul li a:hover {
     margin-top: 20px;
 }
 
+/* Project Goals Section */
+.project-goals {
+    padding: 40px 20px; /* Add spacing around the section */
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center-align the content */
+}
+
+.project-goals h1 {
+    font-size: 2.5rem; /* Large heading size */
+    color: #4CAF50; /* Green color to match the theme */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+}
+
+.project-goals p {
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Improve line spacing */
+    color: #333; /* Dark text color for contrast */
+    max-width: 800px; /* Limit the width of the text */
+    margin: 0 auto; /* Center the text block */
+}
+
 /* Footer */
 footer {
     background-color: #333;
@@ -439,5 +432,42 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
-    
+}
+
+/* Checklist Section */
+.roadmap-checklist {
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 750px;
+}
+
+.roadmap-checklist .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.checklist {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.checklist li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.checklist .checkmark {
+    color: #4CAF50; /* Green checkmark color */
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: bold;
 }

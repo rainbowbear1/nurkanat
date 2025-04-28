@@ -1,0 +1,124 @@
+<body>
+    <section>
+      <!-- Секция: Мониторинг почвы -->
+      <div class="card">
+        <h2>Мониторинг почвы</h2>
+        <p>Алматинская область имеет разнообразные типы почв, которые нуждаются в постоянном мониторинге для сохранения их плодородия и защиты от деградации. Почвенные анализы включают исследования на содержание органических веществ, кислотность, содержание минералов и загрязняющих веществ.</p>
+      </div>
+  
+      <div class="card">
+        <h3>Основные параметры мониторинга почвы</h3>
+        <ul>
+          <li>Кислотность (pH)</li>
+          <li>Содержание органических веществ</li>
+          <li>Минеральное содержание (азот, фосфор, калий)</li>
+          <li>Загрязнение тяжёлыми металлами</li>
+        </ul>
+      </div>
+  
+      <div class="card">
+        <h3>Карта мониторинга почвы</h3>
+        <div id="soilMap" class="leaflet-container"></div>
+      </div>
+  
+      <!-- Секция: Мониторинг воздуха -->
+      <div class="card">
+        <h2>Мониторинг воздуха</h2>
+        <p>Контроль качества воздуха важен для здоровья людей и сохранения экосистемы региона. Основные параметры, такие как концентрация углекислого газа, оксидов азота, серы и других загрязняющих веществ, подлежат постоянному наблюдению.</p>
+      </div>
+  
+      <div class="card">
+        <h3>Основные параметры мониторинга воздуха</h3>
+        <ul>
+          <li>Уровень загрязнения CO2</li>
+          <li>Оксиды азота (NOx)</li>
+          <li>Концентрация мелкодисперсных частиц (PM2.5, PM10)</li>
+          <li>Содержание серы и углеводородов</li>
+        </ul>
+      </div>
+  
+      <div class="card">
+        <h3>Карта мониторинга воздуха</h3>
+        <div id="airMap" class="leaflet-container"></div>
+      </div>
+  
+      <!-- Секция: Мониторинг воды -->
+      <div class="card">
+        <h2>Мониторинг воды</h2>
+        <p>Качество воды в Алматинской области включает как поверхностные, так и подземные водоисточники. Контроль за водой помогает выявить загрязнение тяжёлыми металлами, пестицидами и другими токсинами.</p>
+      </div>
+  
+      <div class="card">
+        <h3>Основные параметры мониторинга воды</h3>
+        <ul>
+          <li>Физико-химические параметры (pH, температура, мутность)</li>
+          <li>Токсичные вещества (тяжёлые металлы, нитраты, пестициды)</li>
+          <li>Биологические показатели (бактерии и вирусы)</li>
+        </ul>
+      </div>
+  
+      <div class="card">
+        <h3>Карта мониторинга воды</h3>
+        <div id="waterMap" class="leaflet-container"></div>
+      </div>
+  
+      <!-- Секция: Биологический мониторинг -->
+      <div class="card">
+        <h2>Биологический мониторинг</h2>
+        <p>Биологический мониторинг помогает выявить изменения в экосистемах, а также определить состояние флоры и фауны. Это важно для сохранения биоразнообразия и предотвращения возможных экологических катастроф.</p>
+      </div>
+  
+      <div class="card">
+        <h3>Основные параметры биологического мониторинга</h3>
+        <ul>
+          <li>Изучение популяций животных и растений</li>
+          <li>Оценка состояния экосистем</li>
+          <li>Мониторинг микробиологического состава водоёмов</li>
+        </ul>
+      </div>
+  
+      <div class="card">
+        <h3>Карта биологического мониторинга</h3>
+        <div id="bioMap" class="leaflet-container"></div>
+      </div>
+    </section>
+  
+    <!-- Подключение Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+      // Почва: Илийский район
+      const soilMap = L.map('soilMap').setView([43.5, 77.0], 9);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(soilMap);
+      L.marker([43.5, 77.0]).addTo(soilMap).bindPopup('Илийский район — мониторинг почвы');
+  
+      // Воздух: Алматы и Талдыкорган
+      const airMap = L.map('airMap').setView([43.5, 77.2], 8);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(airMap);
+      L.marker([43.25, 76.9]).addTo(airMap).bindPopup('Алматы — загрязнение воздуха');
+      L.marker([45.01, 78.37]).addTo(airMap).bindPopup('Талдыкорган — умеренное загрязнение');
+  
+      // Вода: река Или, Капшагай
+      const waterMap = L.map('waterMap').setView([43.85, 77.1], 8);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(waterMap);
+      L.marker([43.85, 77.0]).addTo(waterMap).bindPopup('Река Или');
+      L.marker([43.85, 77.3]).addTo(waterMap).bindPopup('Капшагайское водохранилище');
+  
+      // Биологический мониторинг
+      const bioMap = L.map('bioMap').setView([43.5, 77.0], 9);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(bioMap);
+      L.marker([43.65, 77.12]).addTo(bioMap).bindPopup('Илийский природный заповедник');
+      L.marker([45.01, 78.37]).addTo(bioMap).bindPopup('Станция мониторинга в Талдыкоргане');
+      L.marker([43.25, 76.9]).addTo(bioMap).bindPopup('Водозабор — мониторинг экосистем в Алматы');
+    </script>
+  </body>
+  </html>
+<!-- Compare this snippet from index.html: -->  
