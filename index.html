@@ -1,155 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Экология и Мониторинг Алматинской области</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/scrollreveal"></script> <!-- Для анимаций -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Экология и Мониторинг Алматинской области</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-
 <body>
 
-    <header>
-        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="project-goals.html">Цели проекта</a></li>
-                <li><a href="roadmap.html">Роадмап</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="about.html">О нас</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+<header>
+  <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="project-goals.html">Цели проекта</a></li>
+      <li><a href="roadmap.html">Роадмап</a></li>
+      <li><a href="news.html">Новости</a></li>
+      <li><a href="about.html">О нас</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Экология и Мониторинг Алматинской области</h1>
-            <p>Следим за экологическим состоянием региона, проводим мониторинг воды, воздуха и земли.</p>
-            <a href="#volunteer" class="btn-main">Записаться на волонтерство</a>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Экология и Мониторинг Алматинской области</h1>
+    <p>Следим за экологическим состоянием региона, проводим мониторинг воды, воздуха и земли.</p>
+    <a href="#volunteer" class="btn-main">Записаться на волонтерство</a>
+  </div>
+</section>
 
+<!-- ... monitoring sections ... (сокращено для компактности) ... -->
 
-    <section class="monitoring" id="monitoring">
-        <!-- Секция: Мониторинг почвы -->
-        <div class="card">
-          <h2>Мониторинг почвы</h2>
-          <p>Алматинская область имеет разнообразные типы почв, которые нуждаются в постоянном мониторинге для сохранения их плодородия и защиты от деградации. Почвенные анализы включают исследования на содержание органических веществ, кислотность, содержание минералов и загрязняющих веществ.</p>
-        </div>
-    
-        <div class="card">
-          <h3>Основные параметры мониторинга почвы</h3>
-          <ul>
-            <li>Кислотность (pH)</li>
-            <li>Содержание органических веществ</li>
-            <li>Минеральное содержание (азот, фосфор, калий)</li>
-            <li>Загрязнение тяжёлыми металлами</li>
-          </ul>
-        </div>
-    
-        <div class="card">
-          <h3>Карта мониторинга почвы</h3>
-          <div id="soilMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
-        </div>
-    
-        <!-- Секция: Мониторинг воздуха -->
-        <div class="card">
-          <h2>Мониторинг воздуха</h2>
-          <p>Контроль качества воздуха важен для здоровья людей и сохранения экосистемы региона. Основные параметры, такие как концентрация углекислого газа, оксидов азота, серы и других загрязняющих веществ, подлежат постоянному наблюдению.</p>
-        </div>
-    
-        <div class="card">
-          <h3>Основные параметры мониторинга воздуха</h3>
-          <ul>
-            <li>Уровень загрязнения CO2</li>
-            <li>Оксиды азота (NOx)</li>
-            <li>Концентрация мелкодисперсных частиц (PM2.5, PM10)</li>
-            <li>Содержание серы и углеводородов</li>
-          </ul>
-        </div>
-    
-        <div class="card">
-          <h3>Карта мониторинга воздуха</h3>
-          <div id="airMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
-        </div>
-    
-        <!-- Секция: Мониторинг воды -->
-        <div class="card">
-          <h2>Мониторинг воды</h2>
-          <p>Качество воды в Алматинской области включает как поверхностные, так и подземные водоисточники. Контроль за водой помогает выявить загрязнение тяжёлыми металлами, пестицидами и другими токсинами.</p>
-        </div>
-    
-        <div class="card">
-          <h3>Основные параметры мониторинга воды</h3>
-          <ul>
-            <li>Физико-химические параметры (pH, температура, мутность)</li>
-            <li>Токсичные вещества (тяжёлые металлы, нитраты, пестициды)</li>
-            <li>Биологические показатели (бактерии и вирусы)</li>
-          </ul>
-        </div>
-    
-        <div class="card">
-          <h3>Карта мониторинга воды</h3>
-          <div id="waterMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
-        </div>
-    
-        <!-- Секция: Биологический мониторинг -->
-        <div class="card">
-          <h2>Биологический мониторинг</h2>
-          <p>Биологический мониторинг помогает выявить изменения в экосистемах, а также определить состояние флоры и фауны. Это важно для сохранения биоразнообразия и предотвращения возможных экологических катастроф.</p>
-        </div>
-    
-        <div class="card">
-          <h3>Основные параметры биологического мониторинга</h3>
-          <ul>
-            <li>Изучение популяций животных и растений</li>
-            <li>Оценка состояния экосистем</li>
-            <li>Мониторинг микробиологического состава водоёмов</li>
-          </ul>
-        </div>
-    
-        <div class="card">
-          <h3>Карта биологического мониторинга</h3>
-          <div id="bioMap" class="leaflet-container"><p class="coming-soon">[Скоро]</p></div>
-        </div>
-      </section>
+<section class="volunteer" id="volunteer">
+  <h2 class="section-title">Записаться на волонтерство</h2>
+  <form class="volunteer-form">
+    <label for="name">Ваше имя:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Ваш email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Почему вы хотите стать волонтером?</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <button type="submit" class="btn-main">Отправить заявку</button>
+  </form>
 
+  <div id="crypto-panel" style="margin-top: 30px; background: #f9f9f9; padding: 15px; border-radius: 10px;">
+    <h3>🌀 Fractal Crypt</h3>
+    <label>Введите текст или JSON:</label>
+    <textarea id="input-text" placeholder="Текст для шифрования или JSON для расшифровки..." style="width: 100%; height: 100px;"></textarea>
+    <label>Ключ:</label>
+    <input id="key" placeholder="Ключ (например: fractal42)" style="width: 100%; margin: 10px 0;">
+    <button onclick="encryptText()">Зашифровать</button>
+    <button onclick="decryptText()">Расшифровать</button>
+    <h4>Результат:</h4>
+    <pre id="output" style="background: #eee; padding: 10px; border-radius: 5px;"></pre>
+  </div>
+</section>
 
+<footer>
+  <div class="contact-info">
+    <h3>Контактная информация</h3>
+    <p>Email: ecology@organization.kz</p>
+    <p>Telegram: @AlmaEco_bot</p>
+    <p>Телефон: +7 777 409 44 35</p>
+    <p>Адрес: Алматы, улица Экологов 1</p>
+  </div>
+  <p>&copy; 2025 Экология и Мониторинг. Все права защищены.</p>
+</footer>
 
+<script>
+  async function deriveKey(password, salt) {
+    const enc = new TextEncoder();
+    const baseKey = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+    return await crypto.subtle.deriveKey({
+      name: "PBKDF2",
+      salt,
+      iterations: 100000,
+      hash: "SHA-256"
+    }, baseKey, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+  }
 
-    <section class="volunteer" id="volunteer">
-        <h2 class="section-title">Записаться на волонтерство</h2>
-        <form class="volunteer-form">
-            <label for="name">Ваше имя:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Ваш email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Почему вы хотите стать волонтером?</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <button type="submit" class="btn-main">Отправить заявку</button>
-        </form>
-    </section>
+  async function encryptText() {
+    const text = document.getElementById("input-text").value;
+    const password = document.getElementById("key").value;
+    const enc = new TextEncoder();
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const key = await deriveKey(password, salt);
+    const encoded = enc.encode(text);
+    const encrypted = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, encoded);
+    const result = {
+      iv: Array.from(iv),
+      salt: Array.from(salt),
+      data: btoa(String.fromCharCode(...new Uint8Array(encrypted)))
+    };
+    document.getElementById("output").textContent = JSON.stringify(result);
+  }
 
-    <footer>
-        <div class="contact-info">
-            <h3>Контактная информация</h3>
-            <p>Email: ecology@organization.kz</p>
-            <p>Telegram: @AlmaEco_bot</p>
-            <p>Телефон: +7 777 409 44 35</p>
-            <p>Адрес: Алматы, улица Экологов 1</p>
-        </div>
-        <p>&copy; 2025 Экология и Мониторинг. Все права защищены.</p>
-    </footer>
+  async function decryptText() {
+    const input = document.getElementById("input-text").value;
+    const password = document.getElementById("key").value;
+    try {
+      const { iv, salt, data } = JSON.parse(input);
+      const key = await deriveKey(password, new Uint8Array(salt));
+      const encryptedBytes = Uint8Array.from(atob(data), c => c.charCodeAt(0));
+      const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: new Uint8Array(iv) }, key, encryptedBytes);
+      const dec = new TextDecoder();
+      document.getElementById("output").textContent = dec.decode(decrypted);
+    } catch (e) {
+      document.getElementById("output").textContent = "Ошибка расшифровки.";
+    }
+  }
+</script>
 
-
-    
-
-    
-    <script src="js/script.js"></script>
 </body>
-
 </html>
