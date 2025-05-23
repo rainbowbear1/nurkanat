@@ -3,14 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Экология и Мониторинг Алматинской области</title>
+  <title>Экология и Прокторинг</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2em;
+      margin-top: 30px;
+    }
+    .volunteer-form, .contact-info {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #crypto-panel {
+      display: none;
+      margin-top: 30px;
+      background: #e0f7fa;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #00796b;
+      box-shadow: 0 0 10px rgba(0, 121, 107, 0.3);
+    }
+    #crypto-panel textarea,
+    #crypto-panel input,
+    #crypto-panel button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 12px;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    #crypto-panel button {
+      background-color: #00796b;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    #crypto-panel button:hover {
+      background-color: #004d40;
+    }
+    #crypto-panel pre {
+      background: #1b1b1b;
+      color: #00e676;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-top: 10px;
+    }
+    .info-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #eef9f1;
+      border-left: 5px solid #4caf50;
+      border-radius: 8px;
+    }
+    .info-section h3 {
+      margin-top: 0;
+    }
+    .copy-btn {
+      background: #555;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background: #333;
+    }
+    #adminModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      max-width: 400px;
+      z-index: 9999;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
   <nav class="nav-menu">
     <ul>
       <li><a href="index.html">Главная</a></li>
@@ -24,38 +115,72 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Экология и Мониторинг Алматинской области</h1>
-    <p>Следим за экологическим состоянием региона, проводим мониторинг воды, воздуха и земли.</p>
-    <a href="#volunteer" class="btn-main">Записаться на волонтерство</a>
+    <h1>Исследование: Экология и Прокторинг</h1>
+    <p>Мы исследуем новые подходы к защите экологических данных с помощью технологии прокторинга.</p>
   </div>
 </section>
 
-<!-- ... monitoring sections ... (сокращено для компактности) ... -->
+<section class="info-section">
+  <section class="info-section">
+  <h3>🌱 Платформа обучения</h3>
+  <p>
+    В рамках проекта мы также разрабатываем платформу интерактивного обучения, направленную на формирование экологической ответственности у школьников. Платформа предлагает тесты, видеоуроки и интерактивные задания.
+  </p>
+</section>
+
+<section class="info-section">
+  <h3>📊 Статистика по регионам</h3>
+  <p>
+    Наши аналитические инструменты позволяют отслеживать экологические показатели по регионам Казахстана. Данные собираются с помощью IoT-устройств и визуализируются на карте.
+  </p>
+</section>
+
+<section class="info-section">
+  <h3>🧪 Эксперименты и публикации</h3>
+  <p>
+    Команда проекта публикует результаты экспериментов в открытом доступе, а также приглашает студентов к участию в исследованиях. Мы сотрудничаем с ВУЗами и научными центрами.
+  </p>
+</section>
+
+  <h3>📡 Как это работает?</h3>
+  <p>
+    Мы применяем современные методы шифрования для защиты информации о мониторинге окружающей среды. Также реализованы базовые элементы прокторинга — фиксируются действия пользователя, предотвращается перехват сессии. Всё это помогает обеспечить доверие к экологическим данным.
+  </p>
+</section>
 
 <section class="volunteer" id="volunteer">
-  <h2 class="section-title">Записаться на волонтерство</h2>
+  <h2 class="section-title">Форма волонтёра</h2>
   <form class="volunteer-form">
-    <label for="name">Ваше имя:</label>
+    <label for="name">Ваше имя </label>
     <input type="text" id="name" name="name" required>
     <label for="email">Ваш email:</label>
     <input type="email" id="email" name="email" required>
-    <label for="message">Почему вы хотите стать волонтером?</label>
+    <label for="message">Почему вы хотите участвовать в проекте?</label>
     <textarea id="message" name="message" rows="4" required></textarea>
     <button type="submit" class="btn-main">Отправить заявку</button>
   </form>
 
-  <div id="crypto-panel" style="margin-top: 30px; background: #f9f9f9; padding: 15px; border-radius: 10px;">
-    <h3>🌀 Fractal Crypt</h3>
-    <label>Введите текст или JSON:</label>
-    <textarea id="input-text" placeholder="Текст для шифрования или JSON для расшифровки..." style="width: 100%; height: 100px;"></textarea>
-    <label>Ключ:</label>
-    <input id="key" placeholder="Ключ (например: fractal42)" style="width: 100%; margin: 10px 0;">
-    <button onclick="encryptText()">Зашифровать</button>
-    <button onclick="decryptText()">Расшифровать</button>
-    <h4>Результат:</h4>
-    <pre id="output" style="background: #eee; padding: 10px; border-radius: 5px;"></pre>
+  <div id="crypto-panel">
+    <h3>🛡 Fractal Crypt — криптолаборатория придуманная базовой математикой школьников</h3>
+    <textarea id="input-text" placeholder="Введите текст или JSON..."></textarea>
+    <input id="key" placeholder="Ключ (или сгенерируйте)" />
+    <button onclick="generateKey()">🎲 Случайный ключ</button>
+    <button onclick="encryptText()">🔐 Зашифровать</button>
+    <button onclick="decryptText()">🔓 Расшифровать</button>
+    <button class="copy-btn" onclick="copyOutput()">📋 Копировать результат</button>
+    <pre id="output"></pre>
   </div>
 </section>
+
+<div id="adminModal">
+  <h3>🔧 Админ-доступ</h3>
+  <label>Изменить ключ доступа к лаборатории:</label>
+  <input type="text" id="newAccessKey">
+  <label>Ключевое слово из причины участия:</label>
+  <input type="text" id="newKeyword">
+  <button onclick="saveAccessKey()">Сохранить</button>
+  <button onclick="document.getElementById('adminModal').style.display='none'">Закрыть</button>
+</div>
 
 <footer>
   <div class="contact-info">
@@ -65,19 +190,64 @@
     <p>Телефон: +7 777 409 44 35</p>
     <p>Адрес: Алматы, улица Экологов 1</p>
   </div>
-  <p>&copy; 2025 Экология и Мониторинг. Все права защищены.</p>
+  <p>&copy; 2025 Исследование природы и кибербезопасности. Все права защищены.</p>
 </footer>
 
 <script>
+  let globalAccessKey = localStorage.getItem("accessKey") || "nurfrak";
+  let keyword = localStorage.getItem("keyword") || "экология";
+
+  function checkCryptoAccess() {
+    const name = document.getElementById("name").value.trim().toLowerCase();
+    const message = document.getElementById("message").value.trim().toLowerCase();
+    if (name === globalAccessKey && message.includes(keyword)) {
+      document.getElementById("crypto-panel").style.display = "block";
+    }
+  }
+
+  function saveAccessKey() {
+    const newKey = document.getElementById("newAccessKey").value.trim().toLowerCase();
+    const newWord = document.getElementById("newKeyword").value.trim().toLowerCase();
+    if (newKey) {
+      globalAccessKey = newKey;
+      localStorage.setItem("accessKey", newKey);
+    }
+    if (newWord) {
+      keyword = newWord;
+      localStorage.setItem("keyword", newWord);
+    }
+    alert("Ключ и слово обновлены.");
+    document.getElementById("adminModal").style.display = "none";
+  }
+
+  document.getElementById("name").addEventListener("input", checkCryptoAccess);
+  document.getElementById("message").addEventListener("input", checkCryptoAccess);
+
+  document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.shiftKey && e.altKey && e.key.toLowerCase() === "q") {
+      const pass = prompt("Введите пароль администратора:");
+      if (pass === "nurkanat") {
+        document.getElementById("adminModal").style.display = "block";
+        document.getElementById("newAccessKey").value = globalAccessKey;
+        document.getElementById("newKeyword").value = keyword;
+      }
+    }
+    if (e.key === "Enter" && e.getModifierState("Tab")) {
+      checkCryptoAccess();
+    }
+  });
+
+  function generateKey() {
+    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < 16; i++) result += chars[Math.floor(Math.random() * chars.length)];
+    document.getElementById("key").value = result;
+  }
+
   async function deriveKey(password, salt) {
     const enc = new TextEncoder();
     const baseKey = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
-    return await crypto.subtle.deriveKey({
-      name: "PBKDF2",
-      salt,
-      iterations: 100000,
-      hash: "SHA-256"
-    }, baseKey, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+    return await crypto.subtle.deriveKey({ name: "PBKDF2", salt, iterations: 150000, hash: "SHA-256" }, baseKey, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
   }
 
   async function encryptText() {
@@ -94,7 +264,7 @@
       salt: Array.from(salt),
       data: btoa(String.fromCharCode(...new Uint8Array(encrypted)))
     };
-    document.getElementById("output").textContent = JSON.stringify(result);
+    document.getElementById("output").textContent = JSON.stringify(result, null, 2);
   }
 
   async function decryptText() {
@@ -103,15 +273,17 @@
     try {
       const { iv, salt, data } = JSON.parse(input);
       const key = await deriveKey(password, new Uint8Array(salt));
-      const encryptedBytes = Uint8Array.from(atob(data), c => c.charCodeAt(0));
-      const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: new Uint8Array(iv) }, key, encryptedBytes);
-      const dec = new TextDecoder();
-      document.getElementById("output").textContent = dec.decode(decrypted);
-    } catch (e) {
-      document.getElementById("output").textContent = "Ошибка расшифровки.";
+      const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: new Uint8Array(iv) }, key, Uint8Array.from(atob(data), c => c.charCodeAt(0)));
+      document.getElementById("output").textContent = new TextDecoder().decode(decrypted);
+    } catch {
+      document.getElementById("output").textContent = "Ошибка расшифровки или формат неправильный.";
     }
   }
-</script>
 
+  function copyOutput() {
+    const text = document.getElementById("output").textContent;
+    navigator.clipboard.writeText(text).then(() => alert("Результат скопирован."));
+  }
+</script>
 </body>
 </html>
